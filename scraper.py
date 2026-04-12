@@ -37,7 +37,7 @@ def get_current_cars():
             
         texts = link.select('.text.sd.appear')
         if len(texts) >= 5:
-            # 「値下げ」バッジ等の影響で配列がズレる対策（価格は必ず ¥ が含まれると仮定）
+            # 価格の抽出
             price = "価格不明"
             for text in texts:
                 if "¥" in text.text:
@@ -46,14 +46,14 @@ def get_current_cars():
 
             status = texts[0].text.strip()
             name = texts[1].text.strip()
-            
-            # グレード情報の取得（texts[2]が¥を含まないならグレードとみなす）
             grade = texts[2].text.strip() if "¥" not in texts[2].text else ""
             
-            # 走行距離の取得（後ろから探す）
-            mileage = texts[-1].text.strip()
-            if "km" not in mileage and len(texts) >= 2:
-                 mileage = texts[-2].text.strip()
+            # 走行距離の抽出（後ろから探す）
+            mileage = "距離不明"
+            for text in reversed(texts):
+                if "km" in text.text:
+                    mileage = text.text.strip()
+                    break
 
             full_url = f"https://lightning.boxiv.co.jp{path}"
             
@@ -69,24 +69,39 @@ def get_current_cars():
     return cars
 
 def parse_price(price_str):
-    """「¥2,500,000」などの文字列から数字だけを抽出して整数にする"""
+    """金額文字列を整数に変換"""
     try:
-        # 数字以外の文字（¥やカンマなど）を全て削除
         clean_str = re.sub(r'[^\d]', '', price_str)
         return int(clean_str)
     except ValueError:
         return 0
 
 def send_line_message(message):
-    """LINEにプッシュ通知を送る"""
+    """LINEにプッシュ通知を送る (複数メッセージの分割送信に対応)"""
+    if not message:
+        return
+
     api_url = "https://api.line.me/v2/bot/message/push"
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {LINE_TOKEN}"
     }
+
+    # 1通のメッセージは最大5000文字。余裕を持って2000文字で分割してリスト化
+    chunks = [message[i:i+2000] for i in range(0, len(message), 2000)]
+    
+    # LINEの1回のリクエストでは最大5つの吹き出し（メッセージオブジェクト）が送れる
+    messages_payload = [{"type": "text", "text": chunk} for chunk in chunks[:5]]
+    
+    payload = {
+        "to": LINE_USER_ID,
+        "messages": messages_payload
+    }
+    
     try:
-        response = requests.post(api_url, headers=headers, json={"to": LINE_USER_ID, "messages": [{"type": "text", "text": message}]})
+        response = requests.post(api_url, headers=headers, json=payload)
         response.raise_for_status()
+        print("LINEへの通知が成功しました。")
     except Exception as e:
         print(f"LINE通知エラー: {e}")
 
@@ -102,6 +117,7 @@ def main():
     except Exception as e:
         print(f"スクレイピングエラー: {e}")
         current_cars = {}
+        return
 
     new_cars = []
     discounted_cars = []
@@ -109,44 +125,48 @@ def main():
     # 新着＆値下げチェック
     for car_id, info in current_cars.items():
         if car_id not in seen_cars:
-            # 完全に新しい車の場合
             new_cars.append(info)
-            seen_cars[car_id] = info
         else:
-            # 既に知っている車の場合、価格を比較する
             current_price_int = parse_price(info['price'])
             saved_price_int = parse_price(seen_cars[car_id]['price'])
 
-            # 前回保存した価格より安くなっていたら「値下げ」と判定
             if 0 < current_price_int < saved_price_int:
-                drop_amount = saved_price_int - current_price_int
-                info['drop_amount'] = drop_amount
                 info['old_price'] = seen_cars[car_id]['price']
                 discounted_cars.append(info)
                 
-            # 価格やステータス（商談中など）の最新状態を上書き保存
-            seen_cars[car_id] = info
+        # 状態を最新に更新
+        seen_cars[car_id] = info
 
-    # 新着通知
+    # ----- LINEに送るメッセージの作成 -----
+    # 更新があったかどうかでヘッダーを変える
+    if new_cars or discounted_cars:
+        report = "【Lightning 更新がありました！】\n\n"
+    else:
+        report = "【Lightning 更新はありません】\n\n"
+
+    # 新着があれば追加
     if new_cars:
-        for car in new_cars:
-            msg = f"【✨新着テスラ】\n{car['name']}\n価格: {car['price']}\n距離: {car['mileage']}\n状態: {car['status']}\n{car['url']}"
-            send_line_message(msg)
-            print(f"新着通知送信: {car['name']}")
+        report += "✨ 新着車両:\n"
+        for c in new_cars:
+            report += f"・{c['name']} ({c['price']})\n"
+        report += "\n"
 
-    # 値下げ通知
+    # 値下げがあれば追加
     if discounted_cars:
-        for car in discounted_cars:
-            # 値下がり額を「万円」単位に変換
-            drop_man = car['drop_amount'] // 10000 
-            msg = f"【🚨値下げ速報！ {drop_man}万円DOWN】\n{car['name']}\n旧価格: {car['old_price']}\n新価格: {car['price']} 🉐\n距離: {car['mileage']}\n{car['url']}"
-            send_line_message(msg)
-            print(f"値下げ通知送信: {car['name']} ({car['old_price']} -> {car['price']})")
+        report += "🚨 値下げ車両:\n"
+        for c in discounted_cars:
+            report += f"・{c['name']} ({c['old_price']} → {c['price']})\n"
+        report += "\n"
 
-    if not new_cars and not discounted_cars:
-        print("新着・値下げはありませんでした。")
+    # ★重要：更新があろうとなかろうと、全在庫を必ずメッセージに追加する
+    report += "------------------\n🚘 現在の在庫一覧:\n"
+    for car_id, c in current_cars.items():
+        report += f"・{c['status']} | {c['name']}\n  {c['price']} / {c['mileage']}\n  {c['url']}\n\n"
 
-    # 状態を保存
+    # LINEへ送信
+    send_line_message(report)
+
+    # 最後に必ずJSONを上書き保存
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(seen_cars, f, ensure_ascii=False, indent=2)
 
