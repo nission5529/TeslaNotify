@@ -16,22 +16,17 @@ def get_current_cars():
     cars = {}
     print("ブラウザを起動してページを取得中（数秒かかります）...")
 
-    # PlaywrightでChromeを起動
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
-        
-        # ページを開き、通信が落ち着く（JSが実行されきる）まで待機
         page.goto(URL, wait_until="networkidle", timeout=60000)
         
-        # STUDIO特有のフワッと表示や遅延読み込み対策として、少しスクロールして待つ
         page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        page.wait_for_timeout(3000) # 3秒待機
+        page.wait_for_timeout(3000)
         
         html = page.content()
         browser.close()
 
-    # ここから先は前回と同じBeautifulSoupでの解析
     soup = BeautifulSoup(html, 'html.parser')
     car_links = soup.find_all('a', href=re.compile(r'/car/detail'))
 
@@ -42,15 +37,28 @@ def get_current_cars():
             
         texts = link.select('.text.sd.appear')
         if len(texts) >= 5:
+            # 「値下げ」バッジ等の影響で配列がズレる対策（価格は必ず ¥ が含まれると仮定）
+            price = "価格不明"
+            for text in texts:
+                if "¥" in text.text:
+                    price = text.text.strip()
+                    break
+
             status = texts[0].text.strip()
             name = texts[1].text.strip()
-            grade = texts[2].text.strip()
-            price = texts[3].text.strip()
-            mileage = texts[4].text.strip()
+            
+            # グレード情報の取得（texts[2]が¥を含まないならグレードとみなす）
+            grade = texts[2].text.strip() if "¥" not in texts[2].text else ""
+            
+            # 走行距離の取得（後ろから探す）
+            mileage = texts[-1].text.strip()
+            if "km" not in mileage and len(texts) >= 2:
+                 mileage = texts[-2].text.strip()
+
             full_url = f"https://lightning.boxiv.co.jp{path}"
             
             cars[path] = {
-                "name": f"{name} {grade}",
+                "name": f"{name} {grade}".strip(),
                 "price": price,
                 "mileage": mileage,
                 "status": status,
@@ -60,12 +68,17 @@ def get_current_cars():
     print(f"--- 取得完了: {len(cars)}台の車両を検出しました ---")
     return cars
 
+def parse_price(price_str):
+    """「¥2,500,000」などの文字列から数字だけを抽出して整数にする"""
+    try:
+        # 数字以外の文字（¥やカンマなど）を全て削除
+        clean_str = re.sub(r'[^\d]', '', price_str)
+        return int(clean_str)
+    except ValueError:
+        return 0
+
 def send_line_message(message):
     """LINEにプッシュ通知を送る"""
-    # ★動作確認が完了するまでは、LINE通知を止めておくため以下の return を活かします
-    # ★ログに車両が出力されるのを確認したら、下の return を消してください
-    # return 
-
     api_url = "https://api.line.me/v2/bot/message/push"
     headers = {
         "Content-Type": "application/json",
@@ -91,21 +104,49 @@ def main():
         current_cars = {}
 
     new_cars = []
+    discounted_cars = []
 
+    # 新着＆値下げチェック
     for car_id, info in current_cars.items():
         if car_id not in seen_cars:
+            # 完全に新しい車の場合
             new_cars.append(info)
             seen_cars[car_id] = info
+        else:
+            # 既に知っている車の場合、価格を比較する
+            current_price_int = parse_price(info['price'])
+            saved_price_int = parse_price(seen_cars[car_id]['price'])
 
+            # 前回保存した価格より安くなっていたら「値下げ」と判定
+            if 0 < current_price_int < saved_price_int:
+                drop_amount = saved_price_int - current_price_int
+                info['drop_amount'] = drop_amount
+                info['old_price'] = seen_cars[car_id]['price']
+                discounted_cars.append(info)
+                
+            # 価格やステータス（商談中など）の最新状態を上書き保存
+            seen_cars[car_id] = info
+
+    # 新着通知
     if new_cars:
         for car in new_cars:
-            msg = f"【Lightning 新着】\n{car['name']}\n価格: {car['price']}\n距離: {car['mileage']}\n状態: {car['status']}\n{car['url']}"
+            msg = f"【✨新着テスラ】\n{car['name']}\n価格: {car['price']}\n距離: {car['mileage']}\n状態: {car['status']}\n{car['url']}"
             send_line_message(msg)
-            print(f"新着検知: {car['name']} - {car['price']}")
-    else:
-        print("新着はありませんでした。")
+            print(f"新着通知送信: {car['name']}")
 
-    # ★修正ポイント：新着が0件でも、エラーが起きても、絶対に最後にファイルを保存してGitエラーを防ぐ
+    # 値下げ通知
+    if discounted_cars:
+        for car in discounted_cars:
+            # 値下がり額を「万円」単位に変換
+            drop_man = car['drop_amount'] // 10000 
+            msg = f"【🚨値下げ速報！ {drop_man}万円DOWN】\n{car['name']}\n旧価格: {car['old_price']}\n新価格: {car['price']} 🉐\n距離: {car['mileage']}\n{car['url']}"
+            send_line_message(msg)
+            print(f"値下げ通知送信: {car['name']} ({car['old_price']} -> {car['price']})")
+
+    if not new_cars and not discounted_cars:
+        print("新着・値下げはありませんでした。")
+
+    # 状態を保存
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(seen_cars, f, ensure_ascii=False, indent=2)
 
