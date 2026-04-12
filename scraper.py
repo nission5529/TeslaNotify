@@ -64,7 +64,7 @@ def send_line_message(message):
     """LINEにプッシュ通知を送る"""
     # ★動作確認が完了するまでは、LINE通知を止めておくため以下の return を活かします
     # ★ログに車両が出力されるのを確認したら、下の return を消してください
-    return 
+    # return 
 
     api_url = "https://api.line.me/v2/bot/message/push"
     headers = {
