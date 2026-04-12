@@ -1,0 +1,41 @@
+name: Tesla Scraper Notification
+
+on:
+  schedule:
+    # 毎時0分に実行（UTC指定のため注意。以下の書き方で1時間毎に動きます）
+    - cron: '0 * * * *'
+  workflow_dispatch: # 手動実行ボタンを有効化
+
+jobs:
+  scrape-and-notify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 変更したJSONをコミットするために必要
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run scraper
+        env:
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: python scraper.py
+
+      - name: Commit and push state file
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add seen_cars.json
+          # 変更がある場合のみコミットしてプッシュ。無限ループを防ぐため [skip ci] を付与。
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update seen cars [skip ci]" && git push)
