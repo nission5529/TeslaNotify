@@ -19,8 +19,17 @@ def get_current_cars():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
-        page.goto(URL, wait_until="networkidle", timeout=60000)
         
+        # 変更点1: "networkidle" をやめ、HTMLの枠組みが読み込まれた時点("domcontentloaded")で次に進む
+        page.goto(URL, wait_until="domcontentloaded", timeout=60000)
+        
+        try:
+            # 変更点2: 車の詳細ページへのリンク（aタグ）が画面に出現するまで最大30秒待つ（これが一番確実）
+            page.wait_for_selector('a[href*="/car/detail"]', timeout=30000)
+        except Exception as e:
+            print("車両リストの読み込みに時間がかかっているか、要素が見つかりません。")
+        
+        # 念のため一番下までスクロールして少し待つ
         page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
         page.wait_for_timeout(3000)
         
