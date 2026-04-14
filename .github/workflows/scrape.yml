@@ -2,7 +2,8 @@ name: Tesla Scraper Notification
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    # ★ 20分おきに実行
+    - cron: '*/20 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -20,7 +21,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      # ★Playwrightのインストールを追加
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -33,7 +33,6 @@ jobs:
           LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
         run: python scraper.py
 
-      # ★ファイルが存在するときだけコミットする安全設計
       - name: Commit and push state file
         run: |
           git config --global user.name "GitHub Actions Bot"
@@ -42,5 +41,5 @@ jobs:
             git add seen_cars.json
             git diff --quiet && git diff --staged --quiet || (git commit -m "Update seen cars [skip ci]" && git push)
           else
-            echo "保存するデータ(seen_cars.json)がありませんでした。"
+            echo "保存するデータがありませんでした。"
           fi
