@@ -21,11 +21,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10388"
   },
   "/car/detail/10385": {
-    "name": "TESLA Model3 Performance 2020",
-    "price": "¥2,400,000",
+    "name": "値下げ TESLA Model3",
+    "price": "¥2,000,000",
     "mileage": "88,222km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10385"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10385",
+    "old_price": "¥2,400,000"
   },
   "/car/detail/10369": {
     "name": "値下げ TESLA Model3",
