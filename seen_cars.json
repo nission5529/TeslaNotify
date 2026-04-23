@@ -176,10 +176,11 @@
   },
   "/car/detail/10261": {
     "name": "値下げ TESLA Model3",
-    "price": "¥3,300,000",
+    "price": "¥3,100,000",
     "mileage": "58,476km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10261"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10261",
+    "old_price": "¥3,300,000"
   },
   "/car/detail/10258": {
     "name": "TESLA ModelX 100D 2019",
