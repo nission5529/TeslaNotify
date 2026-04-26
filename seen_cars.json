@@ -344,7 +344,7 @@
   },
   "/car/detail/10406": {
     "name": "TESLA ModelX 75D 2017",
-    "price": "¥￥3,300,000",
+    "price": "¥3,300,000",
     "mileage": "68,397km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10406"
@@ -355,5 +355,12 @@
     "mileage": "5,172km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10420"
+  },
+  "/car/detail/10415": {
+    "name": "TESLA ModelY RWD 2022",
+    "price": "¥2,980,000",
+    "mileage": "28,899km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10415"
   }
 }
