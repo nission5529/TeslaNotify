@@ -334,5 +334,12 @@
     "mileage": "49,781km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10411"
+  },
+  "/car/detail/10413": {
+    "name": "TESLA Model Y Performance 2024",
+    "price": "¥4,100,000",
+    "mileage": "12,130km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10413"
   }
 }
