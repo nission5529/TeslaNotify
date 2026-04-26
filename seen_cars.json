@@ -348,5 +348,12 @@
     "mileage": "68,397km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10406"
+  },
+  "/car/detail/10420": {
+    "name": "TESLA ModelY LongRange (LaunchSeries) 2025",
+    "price": "¥5,500,000",
+    "mileage": "5,172km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10420"
   }
 }
