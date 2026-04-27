@@ -362,5 +362,12 @@
     "mileage": "28,899km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10415"
+  },
+  "/car/detail/10421": {
+    "name": "TESLA ModelY RWD 2022",
+    "price": "¥3,400,000",
+    "mileage": "26,727km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10421"
   }
 }
