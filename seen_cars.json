@@ -25,8 +25,7 @@
     "price": "¥1,800,000",
     "mileage": "88,222km",
     "status": "商談中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10385",
-    "old_price": "¥2,000,000"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10385"
   },
   "/car/detail/10369": {
     "name": "TESLA Model3 Performance 2020",
@@ -278,8 +277,7 @@
     "price": "¥2,300,000",
     "mileage": "37,732km",
     "status": "成約済み",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10342",
-    "old_price": "¥2,400,000"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10342"
   },
   "/car/detail/10355": {
     "name": "TESLA ModelY LongRange 2024",
