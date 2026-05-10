@@ -383,5 +383,12 @@
     "mileage": "10,191km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10428"
+  },
+  "/car/detail/10418": {
+    "name": "TESLA Model 3 LongRange 2023",
+    "price": "¥2,700,000",
+    "mileage": "42,617km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10418"
   }
 }
