@@ -337,10 +337,11 @@
   },
   "/car/detail/10413": {
     "name": "TESLA Model Y Performance 2024",
-    "price": "¥4,100,000",
+    "price": "¥3,500,000",
     "mileage": "12,130km",
     "status": "商談中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10413"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10413",
+    "old_price": "¥4,100,000"
   },
   "/car/detail/10406": {
     "name": "TESLA ModelX 75D 2017",
