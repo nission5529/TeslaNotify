@@ -64,10 +64,11 @@
   },
   "/car/detail/10372": {
     "name": "値下げ TESLA Model3",
-    "price": "¥3,200,000",
+    "price": "¥3,000,000",
     "mileage": "12,654km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10372"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10372",
+    "old_price": "¥3,200,000"
   },
   "/car/detail/10370": {
     "name": "値下げ TESLA Model3",
@@ -371,11 +372,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10421"
   },
   "/car/detail/10429": {
-    "name": "TESLA Model3 Standard Range Plus 2021",
-    "price": "¥2,800,000",
+    "name": "値下げ TESLA Model3",
+    "price": "¥2,500,000",
     "mileage": "47,047km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10429"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10429",
+    "old_price": "¥2,800,000"
   },
   "/car/detail/10428": {
     "name": "TESLA ModelY RWD 2023",
