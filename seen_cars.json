@@ -418,5 +418,12 @@
     "mileage": "53,485km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10462"
+  },
+  "/car/detail/10461": {
+    "name": "TESLA ModelY LongRange 2024",
+    "price": "¥3,900,000",
+    "mileage": "31,053km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10461"
   }
 }
