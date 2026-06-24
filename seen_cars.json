@@ -36,10 +36,11 @@
   },
   "/car/detail/10336": {
     "name": "値下げ TESLA ModelS",
-    "price": "¥2,300,000",
+    "price": "¥2,150,000",
     "mileage": "71,991km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10336"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10336",
+    "old_price": "¥2,300,000"
   },
   "/car/detail/10387": {
     "name": "TESLA Model3 LongRange 2021",
