@@ -413,11 +413,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10450"
   },
   "/car/detail/10462": {
-    "name": "TESLA Model 3 Performance 2019",
-    "price": "¥2,400,000",
+    "name": "値下げ TESLA Model 3",
+    "price": "¥2,300,000",
     "mileage": "53,485km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10462"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10462",
+    "old_price": "¥2,400,000"
   },
   "/car/detail/10461": {
     "name": "TESLA ModelY LongRange 2024",
