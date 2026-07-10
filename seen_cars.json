@@ -446,5 +446,12 @@
     "mileage": "31,576km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10444"
+  },
+  "/car/detail/10496": {
+    "name": "TESLA Model X AWD 2023",
+    "price": "¥9,800,000",
+    "mileage": "34,602km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10496"
   }
 }
