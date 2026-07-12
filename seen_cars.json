@@ -467,5 +467,12 @@
     "mileage": "54,059km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10476"
+  },
+  "/car/detail/10480": {
+    "name": "TESLA Model3 Long Range 2021",
+    "price": "¥2,300,000",
+    "mileage": "66,883km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10480"
   }
 }
