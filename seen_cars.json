@@ -488,5 +488,12 @@
     "mileage": "18,351km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10488"
+  },
+  "/car/detail/10508": {
+    "name": "TESLA Model 3 Performance 2024",
+    "price": "¥5,150,000",
+    "mileage": "51,134km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10508"
   }
 }
