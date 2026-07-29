@@ -537,5 +537,12 @@
     "mileage": "32,553km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10505"
+  },
+  "/car/detail/20035": {
+    "name": "TESLA ModelY Performance 2023",
+    "price": "¥3,600,000",
+    "mileage": "83,305km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/20035"
   }
 }
