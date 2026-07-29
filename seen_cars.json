@@ -523,5 +523,19 @@
     "mileage": "67,319km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10504"
+  },
+  "/car/detail/10512": {
+    "name": "TESLA Model3 Performance 2020",
+    "price": "¥1,500,000",
+    "mileage": "248,712km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10512"
+  },
+  "/car/detail/10505": {
+    "name": "TESLA ModelY RWD 2023",
+    "price": "¥3,200,000",
+    "mileage": "32,553km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10505"
   }
 }
