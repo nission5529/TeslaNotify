@@ -551,5 +551,12 @@
     "mileage": "22,438km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10511"
+  },
+  "/car/detail/10524": {
+    "name": "TESLA Model 3 Premium RWD 2024",
+    "price": "¥4,700,000",
+    "mileage": "7,340km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10524"
   }
 }
