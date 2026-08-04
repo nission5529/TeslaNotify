@@ -565,5 +565,12 @@
     "mileage": "139,175km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10499"
+  },
+  "/car/detail/20037": {
+    "name": "TESLA Model3 RWD 2022",
+    "price": "¥2,600,000",
+    "mileage": "24,472km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/20037"
   }
 }
