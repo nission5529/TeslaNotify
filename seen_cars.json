@@ -511,10 +511,10 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10516"
   },
   "/car/detail/20032": {
-    "name": "値下げ TESLA Model3",
+    "name": "TESLA Model3 Long Range 2022",
     "price": "¥2,450,000",
     "mileage": "41,495km",
-    "status": "出品中",
+    "status": "商談中",
     "url": "https://lightning.boxiv.co.jp/car/detail/20032"
   },
   "/car/detail/10504": {
@@ -553,11 +553,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10511"
   },
   "/car/detail/10524": {
-    "name": "TESLA Model 3 Premium RWD 2024",
-    "price": "¥4,700,000",
+    "name": "値下げ TESLA Model 3",
+    "price": "¥4,590,000",
     "mileage": "7,340km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10524"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10524",
+    "old_price": "¥4,700,000"
   },
   "/car/detail/10499": {
     "name": "TESLA Model X Long Range 2019",
