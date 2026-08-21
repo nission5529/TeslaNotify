@@ -519,10 +519,11 @@
   },
   "/car/detail/10504": {
     "name": "TESLA Model3 Long Range 2021",
-    "price": "¥2,280,000",
+    "price": "¥2,250,000",
     "mileage": "67,319km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10504"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10504",
+    "old_price": "¥2,280,000"
   },
   "/car/detail/10512": {
     "name": "値下げ TESLA Model3",
@@ -621,5 +622,12 @@
     "mileage": "15,861km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10535"
+  },
+  "/car/detail/10543": {
+    "name": "TESLA Model3 Performance 2020",
+    "price": "¥2,300,000",
+    "mileage": "80,721km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10543"
   }
 }
