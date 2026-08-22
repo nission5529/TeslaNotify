@@ -557,8 +557,7 @@
     "price": "¥4,190,000",
     "mileage": "7,340km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10524",
-    "old_price": "¥4,390,000"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10524"
   },
   "/car/detail/10499": {
     "name": "TESLA Model X Long Range 2019",
@@ -596,11 +595,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10526"
   },
   "/car/detail/10529": {
-    "name": "TESLA ModelY RWD 2023",
-    "price": "¥3,600,000",
+    "name": "値下げ TESLA ModelY",
+    "price": "¥3,090,000",
     "mileage": "15,720km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10529"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10529",
+    "old_price": "¥3,600,000"
   },
   "/car/detail/10537": {
     "name": "TESLA ModelY RWD 2022",
