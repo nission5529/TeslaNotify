@@ -649,5 +649,12 @@
     "mileage": "24,103km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/20042"
+  },
+  "/car/detail/10531": {
+    "name": "TESLA ModelY RWD 2023",
+    "price": "¥3,300,000",
+    "mileage": "39,865km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10531"
   }
 }
