@@ -651,11 +651,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/20042"
   },
   "/car/detail/10531": {
-    "name": "TESLA ModelY RWD 2023",
-    "price": "¥3,300,000",
+    "name": "値下げ TESLA ModelY",
+    "price": "¥3,150,000",
     "mileage": "39,865km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10531"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10531",
+    "old_price": "¥3,300,000"
   },
   "/car/detail/20044": {
     "name": "TESLA Model3 Long Range 2021",
