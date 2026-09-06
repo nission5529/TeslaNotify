@@ -672,10 +672,11 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/20047"
   },
   "/car/detail/10550": {
-    "name": "TESLA ModelY RWD 2024",
-    "price": "¥3,280,000",
+    "name": "値下げ TESLA ModelY",
+    "price": "¥3,180,000",
     "mileage": "25,581km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10550"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10550",
+    "old_price": "¥3,280,000"
   }
 }
