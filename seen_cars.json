@@ -85,10 +85,11 @@
   },
   "/car/detail/10359": {
     "name": "値下げ TESLA ModelY",
-    "price": "¥3,900,000",
+    "price": "¥3,700,000",
     "mileage": "22,823km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10359"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10359",
+    "old_price": "¥3,900,000"
   },
   "/car/detail/10341": {
     "name": "値下げ TESLA ModelX",
@@ -417,8 +418,7 @@
     "price": "¥1,780,000",
     "mileage": "54,500km",
     "status": "成約済み",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10462",
-    "old_price": "¥1,880,000"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10462"
   },
   "/car/detail/10461": {
     "name": "TESLA ModelY Long Range 2024",
@@ -656,8 +656,7 @@
     "price": "¥2,980,000",
     "mileage": "39,865km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10531",
-    "old_price": "¥3,100,000"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10531"
   },
   "/car/detail/20044": {
     "name": "TESLA Model3 Long Range 2021",
