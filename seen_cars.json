@@ -312,8 +312,7 @@
     "price": "¥2,190,000",
     "mileage": "81,337km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10389",
-    "old_price": "¥2,290,000"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10389"
   },
   "/car/detail/10410": {
     "name": "TESLA ModelY Performance 2022",
@@ -741,5 +740,19 @@
     "mileage": "27,068km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10553"
+  },
+  "/car/detail/10563": {
+    "name": "TESLA Model3 Long Range 2021",
+    "price": "¥1,850,000",
+    "mileage": "67,865km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10563"
+  },
+  "/car/detail/10565": {
+    "name": "TESLA Model S P100D 2018",
+    "price": "¥5,700,000",
+    "mileage": "22,692km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10565"
   }
 }
