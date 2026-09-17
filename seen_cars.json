@@ -682,7 +682,7 @@
     "name": "TESLA Model3 Long Range 2022",
     "price": "¥1,940,000",
     "mileage": "93,124km",
-    "status": "出品中",
+    "status": "商談中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10560"
   },
   "/car/detail/10552": {
@@ -746,8 +746,7 @@
     "price": "¥1,750,000",
     "mileage": "67,865km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10563",
-    "old_price": "¥1,850,000"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10563"
   },
   "/car/detail/10565": {
     "name": "TESLA Model S P100D 2018",
