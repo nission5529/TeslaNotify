@@ -742,11 +742,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10553"
   },
   "/car/detail/10563": {
-    "name": "TESLA Model3 Long Range 2021",
-    "price": "¥1,850,000",
+    "name": "値下げ TESLA Model3",
+    "price": "¥1,750,000",
     "mileage": "67,865km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10563"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10563",
+    "old_price": "¥1,850,000"
   },
   "/car/detail/10565": {
     "name": "TESLA Model S P100D 2018",
