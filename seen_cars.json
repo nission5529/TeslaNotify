@@ -701,10 +701,11 @@
   },
   "/car/detail/10492": {
     "name": "値下げ TESLA ModelY",
-    "price": "¥3,300,000",
+    "price": "¥3,150,000",
     "mileage": "55,788km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10492"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10492",
+    "old_price": "¥3,300,000"
   },
   "/car/detail/10523": {
     "name": "TESLA Model 3 Long Range 2019",
