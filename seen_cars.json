@@ -106,10 +106,11 @@
   },
   "/car/detail/10326": {
     "name": "値下げ TESLA ModelS",
-    "price": "¥4,640,000",
+    "price": "¥4,490,000",
     "mileage": "58,000km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10326"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10326",
+    "old_price": "¥4,640,000"
   },
   "/car/detail/10347": {
     "name": "TESLA ModelX 90D 2017",
