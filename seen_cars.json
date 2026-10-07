@@ -631,10 +631,11 @@
   },
   "/car/detail/10520": {
     "name": "値下げ TESLA Model3",
-    "price": "¥2,190,000",
+    "price": "¥1,990,000",
     "mileage": "82,238km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10520"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10520",
+    "old_price": "¥2,190,000"
   },
   "/car/detail/10528": {
     "name": "値下げ TESLA Model3",
