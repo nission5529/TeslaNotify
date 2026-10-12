@@ -693,11 +693,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10552"
   },
   "/car/detail/10500": {
-    "name": "TESLA Model X 75D 2018",
-    "price": "¥2,990,000",
+    "name": "値下げ TESLA Model X",
+    "price": "¥2,700,000",
     "mileage": "110,957km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10500"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10500",
+    "old_price": "¥2,990,000"
   },
   "/car/detail/10492": {
     "name": "値下げ TESLA ModelY",
