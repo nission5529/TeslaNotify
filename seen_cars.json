@@ -728,11 +728,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10443"
   },
   "/car/detail/20051": {
-    "name": "TESLA ModelY Long Range 2025",
-    "price": "¥5,700,000",
+    "name": "値下げ TESLA ModelY",
+    "price": "¥5,500,000",
     "mileage": "13,105km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/20051"
+    "url": "https://lightning.boxiv.co.jp/car/detail/20051",
+    "old_price": "¥5,700,000"
   },
   "/car/detail/10553": {
     "name": "値下げ TESLA Model X",
