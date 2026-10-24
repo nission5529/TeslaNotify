@@ -155,10 +155,11 @@
   },
   "/car/detail/10290": {
     "name": "値下げ TESLA Model3",
-    "price": "¥3,500,000",
+    "price": "¥3,300,000",
     "mileage": "18,500km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10290"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10290",
+    "old_price": "¥3,500,000"
   },
   "/car/detail/10255": {
     "name": "値下げ TESLA ModelY",
@@ -556,7 +557,7 @@
     "name": "TESLA Model 3 Premium RWD 2024",
     "price": "¥3,790,000",
     "mileage": "7,340km",
-    "status": "商談中",
+    "status": "成約済み",
     "url": "https://lightning.boxiv.co.jp/car/detail/10524"
   },
   "/car/detail/10499": {
@@ -775,5 +776,12 @@
     "mileage": "79,757km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10575"
+  },
+  "/car/detail/10582": {
+    "name": "TESLA Model 3 Premium Long Range 2025",
+    "price": "¥4,800,000",
+    "mileage": "18,237km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10582"
   }
 }
