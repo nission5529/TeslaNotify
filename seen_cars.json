@@ -796,5 +796,19 @@
     "mileage": "11,755km",
     "status": "商談中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10586"
+  },
+  "/car/detail/10596": {
+    "name": "TESLA ModelY RWD 2023",
+    "price": "¥3,150,000",
+    "mileage": "15,398km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10596"
+  },
+  "/car/detail/10597": {
+    "name": "TESLA Model 3 Premium Long Range 2023",
+    "price": "¥3,950,000",
+    "mileage": "13,872km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10597"
   }
 }
