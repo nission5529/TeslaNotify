@@ -810,5 +810,12 @@
     "mileage": "13,872km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10597"
+  },
+  "/car/detail/10595": {
+    "name": "TESLA Model3 Performance 2021",
+    "price": "¥1,990,000",
+    "mileage": "65,720km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10595"
   }
 }
