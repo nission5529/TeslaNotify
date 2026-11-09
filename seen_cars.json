@@ -694,10 +694,11 @@
   },
   "/car/detail/10500": {
     "name": "値下げ TESLA Model X",
-    "price": "¥2,700,000",
+    "price": "¥2,590,000",
     "mileage": "110,957km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10500"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10500",
+    "old_price": "¥2,700,000"
   },
   "/car/detail/10492": {
     "name": "値下げ TESLA ModelY",
@@ -817,5 +818,12 @@
     "mileage": "65,720km",
     "status": "出品中",
     "url": "https://lightning.boxiv.co.jp/car/detail/10595"
+  },
+  "/car/detail/10598": {
+    "name": "TESLA Model 3 Performance 2022",
+    "price": "¥3,000,000",
+    "mileage": "28,231km",
+    "status": "出品中",
+    "url": "https://lightning.boxiv.co.jp/car/detail/10598"
   }
 }
