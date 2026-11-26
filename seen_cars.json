@@ -756,11 +756,12 @@
     "url": "https://lightning.boxiv.co.jp/car/detail/10565"
   },
   "/car/detail/10437": {
-    "name": "TESLA ModelY Performance 2023",
-    "price": "¥3,700,000",
+    "name": "値下げ TESLA ModelY",
+    "price": "¥3,600,000",
     "mileage": "30,728km",
     "status": "出品中",
-    "url": "https://lightning.boxiv.co.jp/car/detail/10437"
+    "url": "https://lightning.boxiv.co.jp/car/detail/10437",
+    "old_price": "¥3,700,000"
   },
   "/car/detail/10574": {
     "name": "TESLA Model3 Long Range 2021",
